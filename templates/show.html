@@ -1,0 +1,91 @@
+
+
+<html><p>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<head>
+{% load static %}
+<title>Cinema World</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="{%static 'css/style.css'%}" rel="stylesheet" type="text/css" />
+<script src="{%static 'js/jquery-1.4.2.min.js'%}" type="text/javascript"></script>
+<script src="{%static 'js/cufon-yui.js'%}" type="text/javascript"></script>
+<script src="{%static 'js/cufon-replace.js'%}" type="text/javascript"></script>
+<script src="{%static 'js/Gill_Sans_400.font.js'%}" type="text/javascript"></script>
+<script src="{%static 'js/script.js'%}" type="text/javascript"></script>
+<!--[if lt IE 7]>
+<script type="text/javascript" src="js/ie_png.js"></script>
+<script type="text/javascript">ie_png.fix('.png, .link1 span, .link1');</script>
+<link href="css/ie6.css" rel="stylesheet" type="text/css" />
+<![endif]-->
+</head>
+<body id="page3">
+<!-- START PAGE SOURCE -->
+<div class="tail-top">
+  <div class="tail-bottom">
+    <div id="main">
+      <div id="header">
+        <div class="row-1">
+          <div class="fleft"><a href="#">Cinema<span>World</span></a></div>
+          <ul>
+            <li><a href="#"><img src="{%static 'images/icon1.gif'%}" alt="" /></a></li>
+            <li><a href="#"><img src="{%static 'images/icon2.gif'%}" alt="" /></a></li>
+            <li><a href="#"><img src="{%static 'images/icon3.gif'%}" alt="" /></a></li>
+          </ul>
+        </div>
+        <div class="row-2">
+          <ul>
+            <li><a href="/login/loggedin/">Home</a></li>
+            
+            <li><a href="/login/cinema/">Theatre</a></li>
+            <li><a href="/login/profile/">Profile</a></li>
+			<li><a href="/login/logout/">LogOut</a></li>
+          </ul>
+        </div>
+      </div>
+      <div id="content">
+        <div class="line-hor"></div>
+        <div class="box">
+          <div class="border-right">
+            <div class="border-left">
+              <div class="inner">
+                <h3>Our <span>Articles</span></h3>
+                <p>A film, also called a movie, motion picture, theatrical film, or photoplay, is a series of still images that, when shown on a screen, create the illusion of moving images.A film, also called a movie, motion picture, theatrical film, or photoplay, is a series of still images that, when shown on a screen, create the illusion of moving images.A film, also called a movie, motion picture, theatrical film, or photoplay, is a series of still images that, when shown on a screen, create the illusion of moving images.</div>
+            </div>
+          </div>
+        </div>
+        <div class="content">
+          <h3><span>MOVIES</span></h3>
+          <ul class="list">
+{% for student1 in t3 %}
+	<!--{% if student1.movie_id == t2 %}-->
+		<br><br><center><p size='8'>{{ student1.movie_name}}</p></center>
+	<!--{% endif %}-->	
+{% endfor %}
+{% for student in t1 %}
+	<!--{% if student.movie_id_id == t2 %}-->
+		<li><img src="{%static 'images/3page-img1.jpg'%}" alt="" /><a href="/login/cinema/book/?id={{ student.time }}&id1={{student.show_id}}"><button><font size="5">{{ student.time }}</font></button></a><br>
+		A film, also called a movie, motion picture, theatrical film, or photoplay, is a series of still images that, when shown on a screen, create the illusion of moving images.<!--{% endif %}	 <a href="/login/cinema/book/"><font size="5">{{ student.time}}</font> </a>-->
+{% endfor %}
+		  </ul>
+        </div>
+      </div>
+      <div id="footer">
+        <div class="left">
+          <div class="right">
+            <div class="footerlink">
+              <p class="lf">you can use it free<a href="#">&nbsp Mayur Patel</a> - No Rights Reserved</p>
+              <p class="rf">Design by <a href="#">mayur74patel</a></p>
+              <div style="clear:both;"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script type="text/javascript"> Cufon.now(); </script>
+<!-- END PAGE SOURCE -->
+</body>
+</html>	

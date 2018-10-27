@@ -1,0 +1,112 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+{% load static %}
+<title>Cinema World </title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="{%static 'css/style.css'%}" rel="stylesheet" type="text/css" />
+<script src="{%static 'js/jquery-1.4.2.min.js'%}" type="text/javascript"></script>
+<script src="{%static 'js/cufon-yui.js'%}" type="text/javascript"></script>
+<script src="{%static 'js/cufon-replace.js'%}" type="text/javascript"></script>
+<script src="{%static 'js/Gill_Sans_400.font.js'%}" type="text/javascript"></script>
+<script src="{%static 'js/script.js'%}" type="text/javascript"></script>
+<!--[if lt IE 7]>
+<script type="text/javascript" src="js/ie_png.js"></script>
+<script type="text/javascript">ie_png.fix('.png, .link1 span, .link1');</script>
+<link href="css/ie6.css" rel="stylesheet" type="text/css" />
+<![endif]-->
+</head>
+<body id="page3">
+<!-- START PAGE SOURCE -->
+<div class="tail-top">
+  <div class="tail-bottom">
+    <div id="main">
+      <div id="header">
+        <div class="row-1">
+          <div class="fleft"><a href="#">Cinema <span>World</span></a></div>
+          <ul>
+            <li><a href="#"><img src="{%static 'images/icon1.gif'%}" alt="" /></a></li>
+            <li><a href="#"><img src="{%static 'images/icon2.gif'%}" alt="" /></a></li>
+            <li><a href="#"><img src="{%static 'images/icon3.gif'%}" alt="" /></a></li>
+          </ul>
+        </div>
+        <div class="row-2">
+          <ul>
+            <li><a href="/login/loggedin/">Home</a></li>
+            <li><a href="/login/cinema/">Theatre</a></li>
+			  <li><a href="/login/profile/">Profile</a></li>
+            <li class="last"><a href="/login/logout/">LogOut</a></li>
+          </ul>
+        </div>
+      </div>
+      <div id="content">
+        <div class="line-hor"></div>
+        <div class="box">
+          <div class="border-right">
+            <div class="border-left">
+              <div class="inner">
+                <h3>Our <span>Articles</span></h3>
+                <p>Theatre or theater is a collaborative form of fine art that uses live performers, typically actors or actresses, to present the experience of a real or imagined event before a live audience in a specific place, often a stage. The performers may communicate this experience to the audience through combinations of gesture, speech, song, music, and dance. Elements of art, such as painted scenery and stagecraft such as lighting are used to enhance the physicality, presence and immediacy of the experience</div>
+            </div>
+          </div>
+        </div>
+        <div class="content">
+          <h3><span>Cinema</span></h3>
+          <ul class="list">
+<a >
+{%csrf_token%}
+{% for student in cinema_number %}
+	
+    
+		<li><img src="{%static 'images/3page-img1.jpg'%}" alt="" /><a href="/login/movies/?id={{ student.cinema_id.cinema_id }}&id1={{student.cinema_id.cinema_name}}"><button><font size="5">{{ student.cinema_id.cinema_name }}</font></button></a><br>
+		Modern theatre includes performances of plays and musical theatre. The art forms of ballet and opera are also theatre and use many conventions such as acting, costumes and staging.
+		{%endfor%}	
+	<!--
+	{%if student.cinema_id.cinema_id == '2'%}
+		<li><img src="{%static 'images/3page-img2.jpg'%}" alt="" /><a href="/login/movies/?id={{ student.cinema_id.cinema_id }}"><button>{{ student.cinema_id.cinema_name }}</button></a><br>
+		Rutrumcumsan faucibulus pellus pellentumsan laculis portor tor magnis facilis ligula vestibulum. Estorci consectetuer lacing tincidunt ligula lacing ac consequat nunc sus laoreet.</li>
+		
+	{% endif %}
+	{%if student.cinema_id.cinema_id == '3'%}
+		<li><img src="{%static 'images/3page-img3.jpg'%}" alt="" /><a href="/login/movies/?id={{ student.cinema_id.cinema_id }}"><button>{{ student.cinema_id.cinema_name }}</button></a></a><br>
+		Rutrumcumsan faucibulus pellus pellentumsan laculis portor tor magnis facilis ligula vestibulum. Estorci consectetuer lacing tincidunt ligula lacing ac consequat nunc sus laoreet.</li>
+		
+	{% endif %}
+	{%if student.cinema_id.cinema_id == '4'%}
+		<li><img src="{%static 'images/2page-img3.jpg'%}" alt="" /><a href="/login/movies/?id={{ student.cinema_id.cinema_id }}"><button>{{ student.cinema_id.cinema_name }}</button></a><br>
+		Rutrumcumsan faucibulus pellus pellentumsan laculis portor tor magnis facilis ligula vestibulum. Estorci consectetuer lacing tincidunt ligula lacing ac consequat nunc sus laoreet.</li>
+		
+	{% endif %}
+	{%if student.cinema_id.cinema_id == '5'%}
+		<li><img src="{%static 'images/2page-img2.jpg'%}" alt="" /><a href="/login/movies/?id={{ student.cinema_id.cinema_id }}"><button>{{ student.cinema_id.cinema_name }}</button></a><br>
+		Rutrumcumsan faucibulus pellus pellentumsan laculis portor tor magnis facilis ligula vestibulum. Estorci consectetuer lacing tincidunt ligula lacing ac consequat nunc sus laoreet.</li>
+		
+	{% endif %}
+	{%if student.cinema_id.cinema_id == '6'%}
+		<li><img src="{%static 'images/1page-img1.jpg'%}" alt="" /><a href="/login/movies/?id={{ student.cinema_id.cinema_id }}"><button>{{ student.cinema_id.cinema_name }}</button></a><br>
+		Rutrumcumsan faucibulus pellus pellentumsan laculis portor tor magnis facilis ligula vestibulum. Estorci consectetuer lacing tincidunt ligula lacing ac consequat nunc sus laoreet.</li> 
+	{% endif %}
+
+-->
+</form>
+		  </ul>
+        </div>
+      </div>
+      <div id="footer">
+        <div class="left">
+          <div class="right">
+            <div class="footerlink">
+              <p class="lf">you can use it free<a href="#">&nbsp Mayur Patel</a> - No Rights Reserved</p>
+              <p class="rf">Design by <a href="#">mayur74patel</a></p>
+              <div style="clear:both;"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script type="text/javascript"> Cufon.now(); </script>
+<!-- END PAGE SOURCE -->
+</body>
+</html>
